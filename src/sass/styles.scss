@@ -1,0 +1,13 @@
+//libs
+//base
+@use '/src/sass/libs/modern-normalize.css';
+@use '/src/sass/base/variables.scss' as *;
+@use '/src/sass/base/basic.scss';
+//reuse
+//ui
+@use '/src/sass/ui/titles.scss';
+@use '/src/sass/ui/buttons.scss';
+@use '/src/sass/ui/header.scss';
+//blocks
+
+//fonts

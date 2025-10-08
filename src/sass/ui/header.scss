@@ -1,0 +1,126 @@
+@use '/src/sass/base/mixins.scss' as *;
+@use '/src/sass/base/variables.scss' as *;
+
+.header {
+    width: 100%;
+    padding-top: 55px;
+    padding-bottom: 22px;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    //левая секция
+    &__logo-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 22px;
+        position: relative;
+    }
+    //логотип огонька
+    &__sublogo {
+        position: absolute;
+        width: 20px;
+        height: 31px;
+        left: 156px;
+        top: calc(-6px + -31px);
+    }
+    //сама картинка title atlant газ
+    &__logo-title {
+        width: 269px;
+        height: 39px;
+        flex-shrink: 0;
+        object-fit: contain;
+    }
+    //Синяя надпись снизу заправка газгольдеров
+    &__title {
+        color: $primary;
+        font-family: 'Open Sans';
+        font-style: italic;
+        line-height: 18px;
+    }
+    //линия по центру
+    &__separator {
+        width: 1px;
+        height: 33px;
+        background-color: $white;
+    }
+    //Расправь плечи в теплом доме
+    &__descr {
+        width: 192px;
+        height: 14px;
+        position: absolute;
+        left: 0;
+        bottom: calc(-8px + -14px);
+    }
+
+    //правая секция
+    &__contact-wrapper {
+        position: relative;
+        max-width: 214px;
+        width: 100%;
+    }
+    //номер телефона который сверху
+    &__phone {
+        position: absolute;
+        left: 0;
+        top: calc(-5px + -29px);
+        color: $light;
+        font-size: 24px;
+        &:hover,
+        &:active,
+        &:focus {
+            color: $primary;
+        }
+    }
+    //срочный вопрос
+    &__question {
+        color: $primary;
+        font-weight: 700;
+        text-decoration-line: underline;
+        text-decoration-skip-ink: none;
+        &:hover,
+        &:active,
+        &:focus {
+            opacity: 0.7;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .header {
+        &__container {
+            margin-left: 20px;
+        }
+        &__title {
+            display: none;
+        }
+        &__separator {
+            display: none;
+        }
+        &__contact-wrapper {
+            display: flex;
+            align-items: end;
+        }
+        &__phone {
+            top: -6px;
+        }
+    }
+}
+
+@media (max-width: 520px) {
+    .header {
+        &__container {
+            flex-direction: column;
+            gap: 30px;
+        }
+        &__contact-wrapper {
+            display: block;
+        }
+        &__phone {
+            position: static;
+        }
+    }
+}

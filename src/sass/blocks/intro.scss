@@ -2,13 +2,15 @@
 @use '/src/sass/base/mixins.scss' as *;
 
 .intro {
+    max-width: 1920px;
+    width: 100%;
     position: relative;
+    overflow: hidden;
     &__container {
         display: flex;
         flex-wrap: wrap;
         padding-top: 34px;
-        //нижний Padding для картинки грузовика чтоб поместилось
-        padding-bottom: 14px;
+        padding-bottom: 72px;
     }
     //В любое время дня и ночи
     &__day-wrapper {
@@ -18,15 +20,6 @@
         align-items: center;
         flex-wrap: wrap;
         gap: 7px 8px;
-    }
-
-    &__day-icon-moon {
-    }
-
-    &__day-icon-arrow {
-    }
-
-    &__day-icon-sun {
     }
 
     &__day-text {
@@ -42,15 +35,6 @@
         align-items: center;
         flex-wrap: wrap;
         gap: 7px 8px;
-    }
-
-    &__weather-icon-cloud {
-    }
-
-    &__weather-icon-arrow {
-    }
-
-    &__weather-icon-snow {
     }
 
     &__weather-text {
@@ -101,12 +85,31 @@
     }
     //truck image on the right
     &__image-truck {
-        display: none;
         position: absolute;
         right: 0;
-        top: 0;
-        width: 1037px;
+        top: 3px;
+        max-width: 1037px;
+        width: 100%;
         height: 477px;
-        flex-shrink: 0;
+        img {
+            height: 100%;
+            object-fit: cover;
+            object-position: left;
+        }
+    }
+}
+
+@media (max-width: 1748px) {
+    .intro {
+        &__image-truck {
+            right: -400px;
+        }
+    }
+}
+@media (max-width: 1033px) {
+    .intro {
+        &__image-truck {
+            right: -600px;
+        }
     }
 }

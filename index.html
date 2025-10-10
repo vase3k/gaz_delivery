@@ -25,28 +25,19 @@
             <div class="header__container container">
                 <!--левый wrapper c логотипом-->
                 <div class="header__logo-wrapper">
-                    <img
-                        src="/src/img/header/header__logo-gas.svg"
-                        alt="Логотип Atlant-gaz"
-                        class="header__sublogo"
-                    />
-                    <img
-                        src="/src/img/header/header__title.png"
-                        alt="Atlant-gaz title"
-                        class="header__logo-title"
-                    />
-                    <div class="header__separator"></div>
-                    <h1 class="header__title">Расправь плечи в теплом доме</h1>
-                    <img
-                        src="/src/img/header/header__descr.png"
-                        alt="Описание: Расправь плечи в теплом доме"
-                        class="header__descr"
-                    />
+                    <div class="header__logo-element">
+                        <img src="/src/img/header/header__logo.png" alt="Логотип Atlant-gaz" />
+                    </div>
+
+                    <div class="header__logo-separator" aria-hidden="true"></div>
+                    <h1 class="header__logo-title">Расправь плечи в теплом доме</h1>
                 </div>
                 <!--правый номер телефона и ссылка-->
                 <div class="header__contact-wrapper">
-                    <a href="tel:+79263306834" class="header__phone">+7 926 330-68-34</a>
-                    <a href="tel:+79263306834" class="header__question">Срочный вопрос</a>
+                    <a href="tel:+79263306834" class="header__contacts-phone">+7 926 330-68-34</a>
+                    <div class="header__contacts-question">
+                        <a href="tel:+79263306834">Срочный вопрос</a>
+                    </div>
                 </div>
             </div>
         </header>
@@ -90,6 +81,7 @@
                         />
                         <p class="intro__weather-text">Вне зависимости от погодных условий</p>
                     </div>
+                    <div class="flex-divider"></div>
 
                     <p class="intro__delivery-time">Доставим газ за 4 часа</p>
                     <div class="flex-divider"></div>
@@ -103,11 +95,12 @@
 
                     <p class="intro__price-info">Доставка газа всегда по актуальным ценам</p>
                 </div>
-                <img
-                    class="intro__image-truck"
-                    src="/src/img/intro/intro__image-truck.png"
-                    alt="Изображение доставки газа"
-                />
+                <div class="intro__image-truck">
+                    <img
+                        src="/src/img/intro/intro__image-truck.png"
+                        alt="Изображение доставки газа"
+                    />
+                </div>
             </section>
         </main>
 

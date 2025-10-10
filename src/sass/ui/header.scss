@@ -2,125 +2,84 @@
 @use '/src/sass/base/variables.scss' as *;
 
 .header {
+    max-width: 1920px;
     width: 100%;
-    padding-top: 55px;
-    padding-bottom: 22px;
-
+    // .header__container
     &__container {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
     }
-
-    //левая секция
+    // .header__logo-wrapper
     &__logo-wrapper {
         display: flex;
-        justify-content: space-between;
-        align-items: end;
-        gap: 22px;
-        position: relative;
+        gap: 21px;
     }
-    //логотип огонька
-    &__sublogo {
-        position: absolute;
-        width: 20px;
-        height: 31px;
-        left: 156px;
-        top: calc(-6px + -31px);
-    }
-    //сама картинка title atlant газ
-    &__logo-title {
-        width: 269px;
-        height: 39px;
+    // .header__logo-element
+    &__logo-element {
+        margin-top: 18px;
+        flex-basis: 269px;
         flex-shrink: 0;
-        object-fit: contain;
     }
-    //Синяя надпись снизу заправка газгольдеров
-    &__title {
-        color: $primary;
-        font-family: 'Open Sans';
-        font-style: italic;
-        line-height: 18px;
-    }
-    //линия по центру
-    &__separator {
+    // .header__logo-separator
+    &__logo-separator {
+        margin-top: 61px;
         width: 1px;
         height: 33px;
         background-color: $white;
     }
-    //Расправь плечи в теплом доме
-    &__descr {
-        width: 192px;
-        height: 14px;
-        position: absolute;
-        left: 0;
-        bottom: calc(-8px + -14px);
+    // .header__logo-title
+    &__logo-title {
+        margin-top: 60px;
+        flex-basis: 189px;
+        font-family: 'Open Sans';
+        color: $primary;
+        font-style: italic;
+        line-height: 18px;
     }
-
-    //правая секция
+    // .header__contact-wrapper
     &__contact-wrapper {
-        position: relative;
-        max-width: 214px;
-        width: 100%;
+        margin-top: 24px;
+        flex-basis: 214px;
+        display: flex;
+        align-content: start;
+        flex-wrap: wrap;
+        gap: 5px;
     }
-    //номер телефона который сверху
-    &__phone {
-        position: absolute;
-        left: 0;
-        top: calc(-5px + -29px);
+    // .header__contacts-phone
+    &__contacts-phone {
         color: $light;
         font-size: 24px;
-        &:hover,
-        &:active,
-        &:focus {
+    }
+    // .header__contacts-question
+    &__contacts-question {
+        flex-basis: 100%;
+        a {
             color: $primary;
-        }
-    }
-    //срочный вопрос
-    &__question {
-        color: $primary;
-        font-weight: 700;
-        text-decoration-line: underline;
-        text-decoration-skip-ink: none;
-        &:hover,
-        &:active,
-        &:focus {
-            opacity: 0.7;
+            font-family: 'Open Sans';
+            font-weight: 700;
+            text-decoration-line: underline;
+            text-decoration-skip-ink: none;
         }
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 509px) {
     .header {
         &__container {
-            margin-left: 20px;
+            justify-content: center;
         }
-        &__title {
-            display: none;
-        }
-        &__separator {
+        &__logo-separator {
             display: none;
         }
         &__contact-wrapper {
-            display: flex;
-            align-items: end;
+            justify-content: center;
         }
-        &__phone {
-            top: -6px;
+        &__logo-title {
+            display: none;
         }
-    }
-}
-
-@media (max-width: 520px) {
-    .header {
-        &__container {
-            flex-direction: column;
-            gap: 30px;
-        }
-        &__contact-wrapper {
-            display: block;
-        }
-        &__phone {
-            position: static;
+        &__contacts-question {
+            text-align: center;
         }
     }
 }

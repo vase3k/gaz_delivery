@@ -50,6 +50,7 @@ body {
     font-weight: 400;
 }
 
+//общие классы
 .container {
     max-width: 1140px;
     width: 100%;
@@ -58,4 +59,8 @@ body {
     @media (max-width: 1166px) {
         padding: 0 10px;
     }
+}
+
+.flex-divider {
+    flex-basis: 100%;
 }

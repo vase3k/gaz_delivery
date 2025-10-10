@@ -53,7 +53,7 @@
         <main>
             <section class="intro">
                 <div class="intro__container container">
-                    <div class="intro__day">
+                    <div class="intro__day-wrapper">
                         <img
                             class="intro__day-icon-moon"
                             src="/src/img/intro/intro__day-icon-moon.svg"
@@ -72,7 +72,7 @@
                         <p class="intro__day-text">В любое время дня и ночи</p>
                     </div>
 
-                    <div class="intro__weather">
+                    <div class="intro__weather-wrapper">
                         <img
                             class="intro__weather-icon-cloud"
                             src="/src/img/intro/intro__weather-icon-cloud.svg"
@@ -92,19 +92,22 @@
                     </div>
 
                     <p class="intro__delivery-time">Доставим газ за 4 часа</p>
+                    <div class="flex-divider"></div>
 
                     <p class="intro__delivery-area">в любую точку Москвы и Московской области</p>
+                    <div class="flex-divider"></div>
 
-                    <button class="intro__button">Заказать доставку газа в газгольдер</button>
+                    <button class="intro__button" type="button">
+                        Заказать доставку газа в газгольдер
+                    </button>
 
                     <p class="intro__price-info">Доставка газа всегда по актуальным ценам</p>
-
-                    <img
-                        class="intro__image-truck"
-                        src="/src/img/intro/intro__image-truck.png"
-                        alt="Изображение доставки газа"
-                    />
                 </div>
+                <img
+                    class="intro__image-truck"
+                    src="/src/img/intro/intro__image-truck.png"
+                    alt="Изображение доставки газа"
+                />
             </section>
         </main>
 

@@ -1,0 +1,54 @@
+@use '/src/sass/base/variables.scss' as *;
+@use '/src/sass/base/mixins.scss' as *;
+
+.price {
+    max-width: 1920px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    // .price__container
+    &__container {
+    }
+    // .price__title
+    &__title {
+    }
+    // .price__content
+    &__content {
+    }
+    // .price__card
+    &__card {
+    }
+    // .price__gas-name
+    &__gas-name {
+    }
+    // .price__gas-price
+    &__gas-price {
+    }
+    // .price__gas-desc
+    &__gas-desc {
+    }
+    // .price__button
+    &__button {
+    }
+    // .price__mix
+    &__mix {
+    }
+    // .price__mix-title
+    &__mix-title {
+    }
+    // .price__mix-values
+    &__mix-values {
+    }
+    // .price__mix-item
+    &__mix-item {
+    }
+    // .price__mix-separator
+    &__mix-separator {
+    }
+    // .price__image
+    &__image {
+    }
+    // .price__decor
+    &__decor {
+    }
+}

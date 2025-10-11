@@ -24,7 +24,7 @@
 
     &__day-text {
         flex-basis: 100%;
-        color: #f1f1f1;
+        color: $light;
         font-family: 'Open Sans';
         font-weight: 300;
     }
@@ -39,7 +39,7 @@
 
     &__weather-text {
         flex-basis: 100%;
-        color: #f1f1f1;
+        color: $light;
         font-family: 'Open Sans';
         font-weight: 300;
     }
@@ -47,7 +47,7 @@
     &__delivery-time {
         margin-top: 12px;
         flex-basis: 460px;
-        color: #2194ff;
+        color: $primary;
         font-size: 64px;
         font-weight: 400;
         line-height: 63px;
@@ -56,7 +56,7 @@
     &__delivery-area {
         margin-top: 14px;
         flex-basis: 307px;
-        color: #f1f1f1;
+        color: $light;
         font-size: 24px;
     }
 
@@ -71,7 +71,6 @@
         cursor: pointer;
         //text buttons style
         color: $light;
-        text-align: center;
         text-shadow: 1px 2px 0 rgba($dark, 0.25);
         font-size: 22px;
     }
@@ -80,7 +79,7 @@
         margin-top: 13px;
         margin-left: 19px;
         flex-basis: 100%;
-        color: #f1f1f1;
+        color: $light;
         font-size: 24px;
     }
     //truck image on the right

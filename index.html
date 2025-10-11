@@ -42,7 +42,7 @@
             </div>
         </header>
         <main>
-            <!-- <section class="intro">
+            <section class="intro">
                 <div class="intro__container container">
                     <div class="intro__day-wrapper">
                         <img
@@ -101,54 +101,59 @@
                         alt="Изображение доставки газа"
                     />
                 </div>
-            </section> -->
+            </section>
             <section class="price">
                 <div class="price__container container">
                     <h1 class="price__title">Стоимость газа в ваш газгольдер сегодня</h1>
 
-                    <div class="price__content">
-                        <article class="price__card">
-                            <h2 class="price__gas-name">Пропан</h2>
-                            <p class="price__gas-price">от 25 рублей за литр</p>
-                            <p class="price__gas-desc">
-                                Физически испарение происходит до -40 градусов, что позволяет
-                                использовать его в наших с вами погодных условиях
-                            </p>
-                            <button class="price__button">Заказать</button>
-                        </article>
+                    <article class="price__card price__card_butan">
+                        <h2 class="price__card-name">Пропан</h2>
+                        <p class="price__card-price">от 25 рублей за литр</p>
+                        <p class="price__card-desc">
+                            Физически испарение происходит до -40 градусов, что позволяет
+                            использовать его в наших с вами погодных условиях
+                        </p>
+                        <button class="price__card-button">Заказать</button>
+                    </article>
 
-                        <div class="price__mix">
-                            <p class="price__mix-title">Идеальное соотношение</p>
+                    <article class="price__mix">
+                        <p class="price__mix-title">Идеальное соотношение</p>
 
-                            <div class="price__mix-values">
-                                <div class="price__mix-item">
-                                    <p>80%</p>
-                                    <p>пропана</p>
-                                </div>
-                                <div class="price__mix-separator"></div>
-                                <div class="price__mix-item">
-                                    <p>20%</p>
-                                    <p>бутана</p>
-                                </div>
+                        <!--блок по центру-->
+                        <div class="price__mix-values">
+                            <div class="price__mix-item">
+                                <p class="price__mix-item_36">80%</p>
+                                <p class="price__mix-item_18">пропана</p>
                             </div>
 
-                            <div class="price__image">
-                                <img src="img/truck.png" alt="Газовоз" />
+                            <div class="price__mix-separator"></div>
+
+                            <div class="price__mix-item">
+                                <p class="price__mix-item_36">20%</p>
+                                <p class="price__mix-item_18">бутана</p>
                             </div>
                         </div>
 
-                        <article class="price__card">
-                            <h2 class="price__gas-name">Бутан</h2>
-                            <p class="price__gas-price">от 16 рублей за литр</p>
-                            <p class="price__gas-desc">
-                                Испарение Бутана происходит только до 0 градусов и годится для
-                                использования в тёплое время года
-                            </p>
-                            <button class="price__button">Заказать</button>
-                        </article>
-                    </div>
+                        <!--картинка грузовика-->
+                        <div class="price__image">
+                            <img src="/src/img/pricing/price__image.png" alt="Газовоз" />
+                        </div>
 
-                    <div class="price__decor"></div>
+                        <!--стрелка внизу-->
+                        <div class="price__arrow-down">
+                            <img src="/src/img/pricing/price__arrow-down.svg" alt="arrow down" />
+                        </div>
+                    </article>
+
+                    <article class="price__card price__card_propane">
+                        <h2 class="price__card-name">Бутан</h2>
+                        <p class="price__card-price">от 16 рублей за литр</p>
+                        <p class="price__card-desc">
+                            Испарение Бутана происходит только до 0 градусов и годится для
+                            использования в тёплое время года
+                        </p>
+                        <button class="price__card-button">Заказать</button>
+                    </article>
                 </div>
             </section>
         </main>

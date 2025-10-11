@@ -4,51 +4,145 @@
 .price {
     max-width: 1920px;
     width: 100%;
-    overflow: hidden;
-    position: relative;
+    background-color: rgba($primary, 0.05);
     // .price__container
     &__container {
+        padding-bottom: 44px;
+        display: grid;
+        grid-template-columns: minmax(0px, 259px) minmax(0px, 542px) minmax(0px, 256px);
+        justify-content: space-between;
+        grid-template-areas:
+            'header header header'
+            'propane mix butan';
     }
     // .price__title
     &__title {
+        margin-top: 46px;
+        //grid placement
+        grid-area: header;
+        //text style
+        color: $primary;
+        text-align: center;
+        font-size: 36px;
     }
-    // .price__content
-    &__content {
-    }
+
     // .price__card
     &__card {
+        min-width: 0;
+        margin-top: 76px;
+        // .price__card_butan
+        &_butan {
+            grid-area: propane;
+        }
+        // .price__card_propane
+        &_propane {
+            grid-area: butan;
+        }
     }
-    // .price__gas-name
-    &__gas-name {
+    // .price__card-name
+    &__card-name {
+        color: $light;
+        font-size: 36px;
     }
-    // .price__gas-price
-    &__gas-price {
+    // .price__card-price
+    &__card-price {
+        color: $primary;
+        font-size: 24px;
     }
-    // .price__gas-desc
-    &__gas-desc {
+    // .price__card-desc
+    &__card-desc {
+        margin-top: 21px;
+        color: $light;
+        font-family: 'Open Sans';
+        font-weight: 300;
     }
-    // .price__button
-    &__button {
+    // .price__card-button
+    &__card-button {
+        margin-top: 28px;
+        width: 155px;
+        height: 43px;
+        flex-shrink: 0;
+
+        border-radius: 50px;
+        background: $primary;
+        cursor: pointer;
+
+        color: $light;
+        font-family: 'Open Sans';
+        font-size: 18px;
+        font-weight: 700;
+        transition: opacity 0.5s;
+        &:hover,
+        &:active,
+        &:focus {
+            opacity: 0.8;
+        }
     }
     // .price__mix
     &__mix {
+        margin-top: 49px;
+        grid-area: mix;
+        position: relative;
+        color: rgba($light, 0.7);
     }
     // .price__mix-title
     &__mix-title {
+        text-align: center;
+        font-size: 20px;
     }
+
     // .price__mix-values
     &__mix-values {
+        margin-top: 13px;
+        display: flex;
+        justify-content: center;
+        gap: 25px;
     }
     // .price__mix-item
     &__mix-item {
+        &_36 {
+            font-size: 36px;
+            line-height: 26px;
+        }
+        &_18 {
+            font-size: 18px;
+        }
     }
     // .price__mix-separator
     &__mix-separator {
+        background-color: rgba($light, 0.3);
+        width: 1px;
+        height: 51px;
     }
     // .price__image
     &__image {
+        margin-top: 15px;
+        margin-right: 10px;
+        min-width: 0;
+        height: 246px;
+        img {
+            height: 100%;
+            object-fit: cover;
+            object-position: left;
+        }
     }
-    // .price__decor
-    &__decor {
+    // .price__arrow-down
+    &__arrow-down {
+        position: absolute;
+        left: 50%;
+        bottom: -20px;
+        transform: translate(-50%, 100%);
+    }
+}
+
+@media (max-width: 856px) {
+    .price {
+        &__container {
+            grid-template-areas:
+                'header header header'
+                'mix mix mix'
+                'propane propane propane'
+                'butan butan butan';
+        }
     }
 }

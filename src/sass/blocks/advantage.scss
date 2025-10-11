@@ -1,0 +1,92 @@
+@use '/src/sass/base/variables.scss' as *;
+@use '/src/sass/base/mixins.scss' as *;
+
+.advantage {
+    max-width: 1920px;
+    width: 100%;
+    // .advantage__container
+    &__container {
+        padding-top: 57px;
+    }
+    // .advantage__title
+    &__title {
+        max-width: 83%;
+        grid-column: 1 / 4;
+        color: $light;
+        text-align: center;
+        font-size: 36px;
+    }
+    &__list {
+        margin-top: 25px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 58px;
+        row-gap: 40px;
+    }
+    // .advantage__item
+    &__item {
+        text-align: center;
+        justify-items: center;
+        &:nth-child(3n - 1) {
+            margin-top: 66px;
+        }
+    }
+    // .advantage__item-img
+    &__item-img {
+    }
+    // .advantage__item-title
+    &__item-title {
+        margin-top: 8px;
+        color: $primary;
+        font-size: 24px;
+    }
+    // .advantage__item-text
+    &__item-text {
+        margin-top: 14px;
+        color: $light;
+        font-family: 'Open Sans';
+        font-weight: 300;
+    }
+    // .advantage__garantie
+    &__garantie {
+        margin-top: 40px;
+        padding-bottom: 61px;
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr minmax(0px, 533px);
+    }
+    // .advantage__garantie-text
+    &__garantie-text {
+        grid-column: 2 / 3;
+        color: $light;
+        font-size: 35px;
+        // .advantage__garantie-text--highlight
+        &--highlight {
+            color: $primary;
+        }
+    }
+    // .advantage__garantie-descr
+    &__garantie-descr {
+        margin-top: 20px;
+        grid-column: 2 / 3;
+        padding: 7px 13px;
+        background-color: $primary;
+        color: $light;
+        font-family: 'Open Sans';
+        font-size: 14px;
+        font-weight: 800;
+    }
+    // .advantage__garantie-img
+    &__garantie-img {
+        position: absolute;
+        bottom: 0;
+        left: -32px;
+        z-index: -1;
+        height: 100%;
+        img {
+            object-fit: cover;
+            object-position: right;
+            height: 100%;
+        }
+    }
+}

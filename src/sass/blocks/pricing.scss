@@ -4,6 +4,7 @@
 .price {
     max-width: 1920px;
     width: 100%;
+    margin: 0 auto;
     background-color: rgba($primary, 0.05);
     // .price__container
     &__container {

@@ -1,7 +1,10 @@
 'use strict';
 
-//import tabs from './modules/tabs';
+import tabs from './modules/tabs';
 
 window.addEventListener('DOMContentLoaded', async () => {
-    //tabs();
+    tabs({
+        buttonsSelector: '.delivery__tabs-button',
+        tabsSelector: '.delivery__content-item',
+    });
 });

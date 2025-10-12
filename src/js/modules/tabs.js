@@ -5,8 +5,6 @@ function tabs({ tabsSelector, defaultSlide = 0, buttonsSelector }) {
     const buttons = Array.from(document.querySelectorAll(buttonsSelector));
 
     tabs.forEach((tab, i) => {
-        // tab.style.display = i === defaultSlide ? 'block' : 'none';
-        // tab.style.opacity = i === defaultSlide ? '1' : '0';
         tab.classList.toggle('delivery__content-item--active', i === defaultSlide);
     });
 
@@ -17,8 +15,6 @@ function tabs({ tabsSelector, defaultSlide = 0, buttonsSelector }) {
             if (tabIndex < 0) return;
 
             tabs.forEach((tab, i) => {
-                // tab.style.display = i === tabIndex ? 'block' : 'none';
-                //tab.style.opacity = i === tabIndex ? '1' : '0';
                 tab.classList.toggle('delivery__content-item--active', i === tabIndex);
             });
         }

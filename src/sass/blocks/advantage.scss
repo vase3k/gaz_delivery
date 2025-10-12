@@ -4,17 +4,18 @@
 .advantage {
     max-width: 1920px;
     width: 100%;
+    margin: 0 auto;
     // .advantage__container
     &__container {
         padding-top: 57px;
     }
     // .advantage__title
     &__title {
-        max-width: 83%;
         grid-column: 1 / 4;
         color: $light;
         text-align: center;
         font-size: 36px;
+        text-wrap-style: balance;
     }
     &__list {
         margin-top: 25px;
@@ -27,6 +28,7 @@
     &__item {
         text-align: center;
         justify-items: center;
+        text-wrap-style: balance;
         &:nth-child(3n - 1) {
             margin-top: 66px;
         }
@@ -87,6 +89,37 @@
             object-fit: cover;
             object-position: right;
             height: 100%;
+        }
+    }
+}
+
+@media (max-width: 950px) {
+    .advantage {
+        &__list {
+            margin-top: 25px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 20px;
+            row-gap: 20px;
+        }
+        &__item {
+            align-self: baseline;
+            &:nth-child(3n - 1) {
+                margin-top: unset;
+            }
+        }
+    }
+}
+
+@media (max-width: 720px) {
+    .advantage {
+        &__list {
+            margin-top: 25px;
+            display: grid;
+            grid-template-columns: minmax(0, 500px);
+            column-gap: 20px;
+            row-gap: 20px;
+            justify-content: center;
         }
     }
 }

@@ -11,51 +11,65 @@
     &__container {
         margin-top: 47px;
         position: relative;
-        //animate active class
-        &--animate-1 {
-            &::after {
-                animation: animateSwiper-1 0.3s linear forwards;
-            }
-            &::before {
-                animation: animateSwiper-2 0.3s linear forwards;
-            }
-        }
-        &--animate-2 {
-            &::after {
-                animation: animateSwiper-2 0.3s linear forwards;
-            }
-            &::before {
-                animation: animateSwiper-3 0.3s linear forwards;
-            }
-        }
-        &::after {
-            content: '';
-            max-width: 799px;
-            width: 100%;
-            height: 286px;
-            border-radius: 40px;
-            background-color: $light;
-            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
+    }
+    // .feedback__animation-slide-1
+    &__animation-slide-1 {
+        max-width: 759px;
+        width: 100%;
+        height: 320px;
+        border-radius: 40px;
+        background-color: $light;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
 
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-        &::before {
-            content: '';
-            max-width: 839px;
-            width: 100%;
-            height: 252px;
-            border-radius: 40px;
-            background-color: $light;
-            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+    &__animation-slide-2 {
+        max-width: 799px;
+        width: 100%;
+        height: 286px;
+        border-radius: 40px;
+        background-color: $light;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
 
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -2;
+    }
+    // .feedback__animation-slide-2
+    &__animation-slide-3 {
+        max-width: 839px;
+        width: 100%;
+        height: 252px;
+        border-radius: 40px;
+        background-color: $light;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -3;
+    }
+    &__animation-slide-4 {
+        max-width: 839px;
+        width: 100%;
+        height: 252px;
+        border-radius: 40px;
+        background-color: $light;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
+        opacity: 0;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -4;
     }
     // .feedback__title
     &__title {
@@ -166,39 +180,36 @@
     }
 }
 
-@keyframes animateSwiper-1 {
-    from {
-        max-width: 799px;
-        width: 100%;
-        height: 286px;
-    }
-    to {
-        max-width: 759px;
-        width: 100%;
-        height: 320px;
-    }
-}
-@keyframes animateSwiper-2 {
-    from {
-        max-width: 839px;
-        width: 100%;
-        height: 252px;
-    }
-    to {
-        max-width: 799px;
-        width: 100%;
-        height: 286px;
-    }
-}
-@keyframes animateSwiper-3 {
-    from {
-        max-width: 759px;
-        width: 100%;
-        height: 320px;
-    }
-    to {
-        max-width: 839px;
-        width: 100%;
-        height: 252px;
+@media (max-width: 1120px) {
+    .feedback {
+        &__slide-wrapper {
+            display: block;
+        }
+        &__slider {
+            height: auto;
+        }
+        &__photo {
+            height: 400px;
+        }
+        // .feedback__img
+        &__img {
+            object-position: center;
+        }
+        &__text {
+            max-width: unset;
+        }
+        &__animation-slide-1,
+        &__animation-slide-2,
+        &__animation-slide-3 {
+            display: none;
+        }
+        &__button {
+            &--prev {
+                left: 0px;
+            }
+            &--next {
+                right: 0px;
+            }
+        }
     }
 }

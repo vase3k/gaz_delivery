@@ -1,8 +1,7 @@
 'use strict';
 
-import animateSlide from './modules/swiperAnimation';
 import tabs from './modules/tabs';
-import '/src/js/modules/swiper.js';
+import initiateSwiper from './modules/swiper';
 
 window.addEventListener('DOMContentLoaded', () => {
     try {
@@ -10,8 +9,8 @@ window.addEventListener('DOMContentLoaded', () => {
             buttonsSelector: '.delivery__tabs-button',
             tabsSelector: '.delivery__content-item',
         });
+        initiateSwiper();
     } catch (e) {
         console.log(e.message);
     }
-    animateSlide();
 });

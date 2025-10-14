@@ -1,24 +1,60 @@
 'use strict';
 
-function animateSlide() {
-    const next = document.querySelector('.feedback__button--next');
-    const prev = document.querySelector('.feedback__button--prev');
-    const slide = document.querySelector('.feedback__container');
+function swiperAnimation(direction = 'normal') {
+    const slide1 = document.querySelector('.feedback__animation-slide-1'),
+        slide2 = document.querySelector('.feedback__animation-slide-2'),
+        slide3 = document.querySelector('.feedback__animation-slide-3'),
+        slide4 = document.querySelector('.feedback__animation-slide-4');
 
-    next.addEventListener('click', () => {
-        if (slide.classList.contains('feedback__container--animate-1')) {
-            slide.classList.toggle('feedback__container--animate-2');
-        } else {
-            slide.classList.toggle('feedback__container--animate-1');
+    slide1.animate(
+        [
+            { maxWidth: '759px', height: '320px' },
+            { maxWidth: '799px', height: '286px', zIndex: -3 },
+        ],
+        {
+            duration: 500,
+            iterations: 1,
+            direction: direction,
+            easing: 'linear',
         }
-    });
-    prev.addEventListener('click', () => {
-        if (slide.classList.contains('feedback__container--animate-1')) {
-            slide.classList.toggle('feedback__container--animate-2');
-        } else {
-            slide.classList.toggle('feedback__container--animate-1');
+    );
+    slide2.animate(
+        [
+            { maxWidth: '799px', height: '286px' },
+            { maxWidth: '759px', height: '320px', zIndex: -1 },
+        ],
+        {
+            duration: 500,
+            iterations: 1,
+            direction: direction,
+            easing: 'linear',
         }
-    });
+    );
+    slide3.animate(
+        [
+            { maxWidth: '839px', height: '252px' },
+            { maxWidth: '799px', height: '286px', zIndex: -2 },
+        ],
+        {
+            duration: 500,
+            iterations: 1,
+            direction: direction,
+            easing: 'linear',
+        }
+    );
+    slide4.animate(
+        [
+            {
+                opacity: 1,
+            },
+        ],
+        {
+            duration: 500,
+            iterations: 1,
+            direction: direction,
+            easing: 'linear',
+        }
+    );
 }
 
-export default animateSlide;
+export default swiperAnimation;

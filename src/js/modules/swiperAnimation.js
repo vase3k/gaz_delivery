@@ -8,7 +8,7 @@ function swiperAnimation(direction = 'normal') {
 
     slide1.animate(
         [
-            { maxWidth: '759px', height: '320px' },
+            { maxWidth: '759px', height: '220px', zIndex: -3 },
             { maxWidth: '799px', height: '286px', zIndex: -3 },
         ],
         {

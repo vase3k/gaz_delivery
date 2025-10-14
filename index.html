@@ -21,7 +21,7 @@
         <title>Atlant-gaz</title>
     </head>
     <body>
-        <!-- <header class="header">
+        <header class="header">
             <div class="header__container container">
                 <div class="header__logo-wrapper">
                     <div class="header__logo-element">
@@ -39,9 +39,9 @@
                     </div>
                 </div>
             </div>
-        </header> -->
+        </header>
         <main>
-            <!-- <section class="intro">
+            <section class="intro">
                 <div class="intro__container container">
                     <div class="intro__day-wrapper">
                         <img
@@ -487,7 +487,7 @@
                         </div>
                     </div>
                 </div>
-            </section> -->
+            </section>
 
             <section class="question">
                 <div class="question__container container">
@@ -502,6 +502,7 @@
                             placeholder="Ваше имя"
                             required
                         />
+                        <div class="question__form-input-error"></div>
                         <input
                             class="question__form-input"
                             name="contact"
@@ -509,12 +510,14 @@
                             placeholder="Ваш email или телефон"
                             required
                         />
+                        <div class="question__form-input-error"></div>
                         <textarea
                             class="question__form-textarea"
                             name="question"
                             placeholder="Ваш вопрос"
                             required
                         ></textarea>
+                        <div class="question__form-input-error"></div>
                         <button class="question__form-button" type="submit">Задать вопрос</button>
                     </form>
 

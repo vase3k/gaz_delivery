@@ -1,23 +1,30 @@
 'use strict';
 
 function tabs({ tabsSelector, defaultSlide = 0, buttonsSelector }) {
-    const tabs = Array.from(document.querySelectorAll(tabsSelector));
-    const buttons = Array.from(document.querySelectorAll(buttonsSelector));
+    const tabs = document.querySelectorAll(tabsSelector);
+    const buttons = document.querySelectorAll(buttonsSelector);
+    if (!tabs.length || !buttons.length) return;
 
-    tabs.forEach((tab, i) => {
-        tab.classList.toggle('delivery__content-item--active', i === defaultSlide);
-    });
-
-    const buttonsParent = buttons[0].parentNode;
-    buttonsParent.addEventListener('click', e => {
-        if (e.target.tagName === 'BUTTON') {
-            const tabIndex = buttons.indexOf(e.target);
-            if (tabIndex < 0) return;
-
-            tabs.forEach((tab, i) => {
-                tab.classList.toggle('delivery__content-item--active', i === tabIndex);
-            });
+    const setActive = index => {
+        for (let i = 0; i < tabs.length; i++) {
+            const isActive = i === index;
+            tabs[i].classList.toggle('delivery__content-item--active', isActive);
+            buttons[i].classList.toggle('delivery__tabs-button--active', isActive);
         }
+    };
+
+    setActive(defaultSlide);
+
+    const buttonsParent = buttons[0].parentElement;
+
+    buttonsParent.addEventListener('click', e => {
+        const btn = e.target.closest('button');
+        if (!btn) return;
+
+        const tabIndex = Array.prototype.indexOf.call(buttons, btn);
+        if (tabIndex === -1) return;
+
+        setActive(tabIndex);
     });
 }
 

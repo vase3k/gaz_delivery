@@ -1,0 +1,82 @@
+@use '/src/sass/base/variables.scss' as *;
+@use '/src/sass/base/mixins.scss' as *;
+
+.faq {
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: rgba($primary, 0.05);
+    padding-top: 37px;
+    padding-bottom: 40px;
+    // .faq__container
+    &__container {
+    }
+    // .faq__title
+    &__title {
+        color: $primary;
+        text-align: center;
+        font-size: 36px;
+    }
+    // .faq__accordion
+    &__accordion {
+        margin-top: 27px;
+        color: #f1f1f1;
+        font-family: 'Open Sans';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+    }
+    // .faq__item
+    &__item {
+        padding-top: 24px;
+        padding-bottom: 24px;
+        padding-left: 70px;
+        padding-right: 32px;
+        border-top: rgba($white, 0.1) solid 1px;
+    }
+    // .faq__question
+    &__question {
+        color: $light;
+        font-family: 'Open Sans';
+        font-weight: 700;
+        text-transform: uppercase;
+        position: relative;
+        &::before {
+            content: url('/src/img/faq/faq__question_initial.svg');
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            top: 50%;
+            left: calc(-22px);
+            transform: translateY(-50%) translateX(-100%);
+        }
+        //active class blue arrow
+        &--active {
+            &::before {
+                content: url('/src/img/faq/faq__question_active.svg');
+                width: 16px;
+                height: 16px;
+                position: absolute;
+                top: 50%;
+                left: calc(-22px);
+                transform: translateY(-50%) translateX(-100%);
+            }
+        }
+    }
+
+    // .faq__answer
+    &__answer {
+        margin-top: 16px;
+        color: $light;
+        font-family: 'Open Sans';
+        font-weight: 300;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+        max-height: 0px;
+        &--active {
+            max-height: 500px;
+        }
+    }
+}

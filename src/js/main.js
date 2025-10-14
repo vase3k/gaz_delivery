@@ -2,6 +2,7 @@
 
 import tabs from './modules/tabs';
 import initiateSwiper from './modules/swiper';
+import accordion from './modules/accordion';
 
 window.addEventListener('DOMContentLoaded', () => {
     try {
@@ -10,6 +11,7 @@ window.addEventListener('DOMContentLoaded', () => {
             tabsSelector: '.delivery__content-item',
         });
         initiateSwiper();
+        accordion();
     } catch (e) {
         console.log(e.message);
     }

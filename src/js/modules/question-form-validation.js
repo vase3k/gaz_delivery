@@ -4,7 +4,7 @@ import JustValidate from 'just-validate';
 
 function validateQuestionForm() {
     const validation = new JustValidate('.question__form', {
-        submitFormAutomatically: true,
+        submitFormAutomatically: false,
         validateBeforeSubmitting: true,
     });
 
@@ -65,10 +65,33 @@ function validateQuestionForm() {
                     .nextElementSibling,
             }
         )
-        .onSuccess(event => {
-            event.target.submit();
+        .onSuccess(e => {
+            // axios
+
+            const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+            document.body.style.paddingRight = `${scrollbarWidth}px`;
+            const confirmationModal = document.querySelector('.confirmation');
+            confirmationModal.classList.toggle('hide');
+            document.body.style.overflow = 'hidden';
         });
     validation.refresh();
+
+    const confirmationModal = document.querySelector('.confirmation');
+    const confirmationForm = document.querySelector('.question__form');
+
+    confirmationModal.addEventListener('click', e => {
+        if (
+            e.target === confirmationModal ||
+            e.target.matches('.confirmation__button') ||
+            e.target.matches('.confirmation__container')
+        ) {
+            confirmationModal.classList.toggle('hide');
+            document.body.style.overflow = ''; // вернуть скролл
+            document.body.style.paddingRight = ''; // убрать компенсацию
+            confirmationForm.reset();
+            validation.refresh();
+        }
+    });
 }
 
 export default validateQuestionForm;

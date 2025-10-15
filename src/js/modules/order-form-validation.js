@@ -4,7 +4,7 @@ import JustValidate from 'just-validate';
 
 function validateOrderForm() {
     const validation = new JustValidate('.modal__form', {
-        submitFormAutomatically: true,
+        submitFormAutomatically: false,
         validateBeforeSubmitting: true,
     });
 
@@ -49,8 +49,9 @@ function validateOrderForm() {
                     .nextElementSibling,
             }
         )
-        .onSuccess(event => {
-            event.target.submit();
+        .onSuccess(e => {
+            hideModal();
+            showOrderModal();
         });
     validation.refresh();
 
@@ -59,11 +60,16 @@ function validateOrderForm() {
     const close = modal.querySelector('.modal__close img');
     const form = modal.querySelector('.modal__form');
     const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-
-    console.log(close);
+    const orderModal = document.querySelector('.confirmation');
 
     const showModal = () => {
         modal.classList.remove('hide');
+        document.body.style.overflow = 'hidden';
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+    };
+
+    const showOrderModal = () => {
+        orderModal.classList.remove('hide');
         document.body.style.overflow = 'hidden';
         document.body.style.paddingRight = `${scrollbarWidth}px`;
     };
@@ -76,10 +82,21 @@ function validateOrderForm() {
         if (typeof validation?.refresh === 'function') validation.refresh();
     };
 
+    const hideConfirmationModal = () => {
+        orderModal.classList.add('hide');
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
+    };
+
     document.addEventListener('click', e => {
-        console.log(e.target);
         if (e.target.matches('[data-order]')) showModal();
         if (e.target === modal || e.target === close) hideModal();
+        if (
+            e.target.matches('.confirmation__button') ||
+            e.target.matches('.confirmation') ||
+            e.target.matches('.confirmation__container')
+        )
+            hideConfirmationModal();
     });
 }
 

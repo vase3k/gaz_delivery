@@ -5,6 +5,7 @@
     position: fixed;
     inset: 0;
     background-color: rgba($dark, 0.9);
+    z-index: 3;
     // .modal__wrapper
     &__wrapper {
         position: absolute;

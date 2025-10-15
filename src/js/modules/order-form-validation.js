@@ -56,36 +56,30 @@ function validateOrderForm() {
 
     //show modal
     const modal = document.querySelector('.modal');
-    const buttons = document.querySelectorAll('button[data-order]');
-    const close = document.querySelector('.modal__close');
-    const form = document.querySelector('.modal__form');
-
+    const close = modal.querySelector('.modal__close img');
+    const form = modal.querySelector('.modal__form');
     const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
 
-    buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            modal.classList.remove('hide');
-            document.body.style.overflow = 'hidden';
-            document.body.style.paddingRight = `${scrollbarWidth}px`;
-        });
-    });
+    console.log(close);
 
-    close.addEventListener('click', () => {
+    const showModal = () => {
+        modal.classList.remove('hide');
+        document.body.style.overflow = 'hidden';
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+    };
+
+    const hideModal = () => {
         modal.classList.add('hide');
         document.body.style.overflow = '';
         document.body.style.paddingRight = '';
         form.reset();
-        validation.refresh();
-    });
+        if (typeof validation?.refresh === 'function') validation.refresh();
+    };
 
-    modal.addEventListener('click', e => {
-        if (e.target.classList.contains('modal')) {
-            modal.classList.add('hide');
-            document.body.style.overflow = '';
-            document.body.style.paddingRight = '';
-            form.reset();
-            validation.refresh();
-        }
+    document.addEventListener('click', e => {
+        console.log(e.target);
+        if (e.target.matches('[data-order]')) showModal();
+        if (e.target === modal || e.target === close) hideModal();
     });
 }
 

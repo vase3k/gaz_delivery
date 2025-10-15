@@ -4,6 +4,7 @@ import tabs from './modules/tabs';
 import initiateSwiper from './modules/swiper';
 import accordion from './modules/accordion';
 import validateQuestionForm from './modules/question-form-validation';
+import initiateYandexMap from './modules/yandex-map';
 
 window.addEventListener('DOMContentLoaded', () => {
     try {
@@ -17,4 +18,5 @@ window.addEventListener('DOMContentLoaded', () => {
     } catch (e) {
         console.log(e.message);
     }
+    initiateYandexMap();
 });

@@ -43,33 +43,33 @@ export default defineConfig({
         //     img: '/images/meta-og-image.jpg',
         //     color: '#ffffff',
         // }),
-        // vitePluginFaviconsInject('src/favicon/favicon.png', {
-        //     background: '#2D2D2D',
-        //     icons: {
-        //         android: true,
-        //         appleIcon: true,
-        //         appleStartup: false,
-        //         favicons: true,
-        //         windows: false,
-        //         yandex: true,
-        //     },
-        //     appName: 'Atlant-gaz',
-        //     appShortName: 'Atlant-gaz',
-        //     appDescription: 'Atlant-gaz доставка',
-        // }),
-        // ViteImageOptimizer({
-        //     png: { quality: 80 },
-        //     jpeg: { quality: 75 },
-        // }),
-        // resizeImagesPlugin({
-        //     inputDir: 'dist',
-        //     width: 1920,
-        // }),
+        vitePluginFaviconsInject('src/favicon/favicon.png', {
+            background: '#2D2D2D',
+            icons: {
+                android: true,
+                appleIcon: true,
+                appleStartup: false,
+                favicons: true,
+                windows: false,
+                yandex: true,
+            },
+            appName: 'Atlant-gaz',
+            appShortName: 'Atlant-gaz',
+            appDescription: 'Atlant-gaz доставка',
+        }),
+        ViteImageOptimizer({
+            png: { quality: 80 },
+            jpeg: { quality: 75 },
+        }),
+        resizeImagesPlugin({
+            inputDir: 'dist',
+            width: 1920,
+        }),
         //createFoldersPlugin(),
         //createFiles(),
-        // legacy({
-        //     targets: ['defaults'],
-        // }),
+        legacy({
+            targets: ['defaults'],
+        }),
     ],
 });
 

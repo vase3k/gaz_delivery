@@ -89,7 +89,7 @@
                     <p class="intro__delivery-area">в любую точку Москвы и Московской области</p>
                     <div class="flex-divider"></div>
 
-                    <button class="intro__button" type="button">
+                    <button class="intro__button" data-order type="button">
                         Заказать доставку газа в газгольдер
                     </button>
 
@@ -113,7 +113,7 @@
                             Физически испарение происходит до -40 градусов, что позволяет
                             использовать его в наших с вами погодных условиях
                         </p>
-                        <button class="price__card-button">Заказать</button>
+                        <button class="price__card-button" data-order>Заказать</button>
                     </article>
 
                     <article class="price__mix">
@@ -149,7 +149,7 @@
                             Испарение Бутана происходит только до 0 градусов и годится для
                             использования в тёплое время года
                         </p>
-                        <button class="price__card-button">Заказать</button>
+                        <button class="price__card-button" data-order>Заказать</button>
                     </article>
                 </div>
             </section>
@@ -337,7 +337,7 @@
                         </article>
                     </div>
 
-                    <button class="delivery__button intro__button" type="submit">
+                    <button class="delivery__button intro__button" data-order type="submit">
                         Заказать газ
                     </button>
                 </div>
@@ -581,7 +581,7 @@
                     <h2 class="question__buttom-title">
                         Закажи прямо сейчас и получи бесплатную установку телеметрии﻿
                     </h2>
-                    <button class="question__order-button intro__button" type="button">
+                    <button class="question__order-button intro__button" data-order type="button">
                         Заказать газ
                     </button>
                 </div>
@@ -616,6 +616,40 @@
                 >
             </div>
         </footer>
+
+        <div class="modal hide">
+            <div class="modal__wrapper">
+                <form class="modal__form" name="gas-delivery" action="#" method="post">
+                    <h1 class="modal__title">Доставим газ за 4 часа</h1>
+                    <input
+                        class="modal__input question__form-input"
+                        type="text"
+                        name="name"
+                        placeholder="Имя"
+                        required
+                    />
+                    <div class="question__form-input-error"></div>
+                    <input
+                        class="modal__input question__form-input"
+                        type="text"
+                        name="phone"
+                        placeholder="Телефон"
+                        required
+                    />
+                    <div class="question__form-input-error"></div>
+                    <button class="modal__button intro__button" data-order type="submit">
+                        Заказать доставку газа
+                    </button>
+                    <div class="modal__close">
+                        <img src="/src/img/modal/modal__close.svg" alt="close button" />
+                    </div>
+                </form>
+                <p class="modal__policy">
+                    Нажимая на кнопку, вы даёте согласие на обработку персональных данных и
+                    соглашаетесь с условиями политики конфиденциальности
+                </p>
+            </div>
+        </div>
 
         <script type="module" src="/src/js/script.js"></script>
     </body>

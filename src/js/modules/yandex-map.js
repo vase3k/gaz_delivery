@@ -18,7 +18,7 @@ function initiateYandexMap() {
         const marker = new ymaps3.YMapMarker({ coordinates: [37.771668, 55.547159] });
 
         const icon = document.createElement('img');
-        icon.src = 'src/img/footer/footer__placeholder.svg';
+        icon.src = 'images/footer__placeholder.svg';
         icon.alt = 'Метка офиса';
         icon.style.maxWidth = '74px';
         icon.style.height = '74px';

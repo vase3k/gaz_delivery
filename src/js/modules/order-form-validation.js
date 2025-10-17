@@ -50,6 +50,31 @@ function validateOrderForm() {
             }
         )
         .onSuccess(e => {
+            //get data from form
+            const formData = new FormData(e.srcElement);
+            const object = {};
+            formData.forEach((value, key) => {
+                object[key] = value;
+            });
+            const json = JSON.stringify(object);
+
+            //send data via http request
+            const request = new XMLHttpRequest();
+            request.open('POST', 'https://httpbin.org/post');
+            request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+            request.send(json);
+
+            request.addEventListener('error', () => {
+                console.log('something went wrong');
+            });
+
+            request.addEventListener('load', () => {
+                if (request.status >= 200 && request.status < 300) {
+                    console.log('succes', JSON.parse(request.response).json);
+                } else {
+                    console.log('somethig went wrong');
+                }
+            });
             hideModal();
             showOrderModal();
         });

@@ -13,7 +13,7 @@ import vitePluginFaviconsInject from 'vite-plugin-favicons-inject';
 import resizeImagesPlugin from './src/js/services/resize-img';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const baseName = `/${path.basename(process.cwd())}/`;
+const baseName = `/${path.basename(process.cwd())}/dist/`;
 
 export default defineConfig({
     base: baseName,
@@ -57,10 +57,10 @@ export default defineConfig({
             appShortName: 'Atlant-gaz',
             appDescription: 'Atlant-gaz доставка',
         }),
-        // ViteImageOptimizer({
-        //     png: { quality: 80 },
-        //     jpeg: { quality: 75 },
-        // }),
+        ViteImageOptimizer({
+            png: { quality: 80 },
+            jpeg: { quality: 75 },
+        }),
         resizeImagesPlugin({
             inputDir: 'dist',
             width: 1920,

@@ -36,13 +36,13 @@ export default defineConfig({
                 assetsSubfolder: 'fonts',
             }
         ),
-        // meta({
-        //     title: 'Atlant-gaz',
-        //     description: 'Заправка баллонов техническим газом',
-        //     url: 'https://atlant-gaz.by/',
-        //     img: '/images/meta-og-image.jpg',
-        //     color: '#ffffff',
-        // }),
+        meta({
+            title: 'Atlant-gaz',
+            description: 'Заправка баллонов техническим газом',
+            url: 'https://atlant-gaz.by/',
+            img: '/images/meta-og-image.jpg',
+            color: '#ffffff',
+        }),
         vitePluginFaviconsInject('src/favicon/favicon.png', {
             background: '#2D2D2D',
             icons: {

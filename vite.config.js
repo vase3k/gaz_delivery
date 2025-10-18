@@ -57,10 +57,10 @@ export default defineConfig({
             appShortName: 'Atlant-gaz',
             appDescription: 'Atlant-gaz доставка',
         }),
-        ViteImageOptimizer({
-            png: { quality: 80 },
-            jpeg: { quality: 75 },
-        }),
+        // ViteImageOptimizer({
+        //     png: { quality: 80 },
+        //     jpeg: { quality: 75 },
+        // }),
         resizeImagesPlugin({
             inputDir: 'dist',
             width: 1920,
